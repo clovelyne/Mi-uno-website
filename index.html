@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Loaf</title>
+    <style>
+        :root {
+            --cat-color: #f39c12; /* Orange tabby */
+            --blanket-color: #a29bfe; /* Soft purple */
+            --bg-color: #fab1a0; /* Peach background */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .scene {
+            position: relative;
+            text-align: center;
+        }
+
+        /* The Blanket */
+        .blanket {
+            width: 300px;
+            height: 120px;
+            background-color: var(--blanket-color);
+            border-radius: 50% 50% 40% 40%;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* The Cat Loaf */
+        .cat {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 100px;
+            background-color: var(--cat-color);
+            border-radius: 60px 60px 30px 30px;
+            animation: purr 3s ease-in-out infinite;
+        }
+
+        /* Ears */
+        .ear {
+            position: absolute;
+            top: -15px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid var(--cat-color);
+        }
+        .ear.left { left: 20px; transform: rotate(-15deg); }
+        .ear.right { right: 20px; transform: rotate(15deg); }
+
+        /* Face */
+        .face {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .eyes {
+            display: flex;
+            gap: 40px;
+        }
+
+        .eye {
+            width: 8px;
+            height: 8px;
+            background: #2d3436;
+            border-radius: 50%;
+        }
+
+        .nose {
+            width: 10px;
+            height: 6px;
+            background: #ff7675;
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+
+        /* Animation for "breathing" */
+        @keyframes purr {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.03); }
+        }
+
+        h1 {
+            color: white;
+            margin-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene">
+        <div class="cat">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="face">
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="nose"></div>
+            </div>
+        </div>
+        <div class="blanket"></div>
+        <h1>10/10 Form</h1>
+    </div>
+
+</body>
+</html>
